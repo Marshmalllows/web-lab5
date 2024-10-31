@@ -10,7 +10,8 @@ function parallelogramArea() {
     let side = 5;
     let height = 4;
     let area = side * height;
-    document.getElementsByClassName('text')[0].innerHTML += "<br>Площа паралелограма:" + area.toString();
+    const text = document.getElementsByClassName('text')[0];
+    text.insertAdjacentHTML('beforeend', "<br>Площа паралелограма: " + area.toString());
 }
 
 function processNumber(number) {
@@ -111,3 +112,33 @@ function mouseOut(event) {
 function mouseOver(event) {
     event.currentTarget.style.textAlign = 'left';
 }
+
+const selector = document.getElementById('SelectItem');
+const textForm = document.getElementById('TextForm');
+
+textForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const value = document.getElementById('textInput').value;
+    processTextList(value);
+});
+
+function processTextList(text) {
+    if (!selector.value){
+        alert("Будь ласка, оберіть елемент для додавання!")
+        return;
+    }
+
+    let storedItems = JSON.parse(localStorage.getItem('orderedList')) || [];
+    storedItems.push(text);
+    localStorage.setItem('orderedList', JSON.stringify(storedItems));
+
+    const blockNumber = parseInt(selector.value.charAt(selector.value.length - 1));
+    const list = document.getElementById(`list${blockNumber}`);
+    const listItem = document.createElement('li');
+    listItem.textContent = text;
+    list.appendChild(listItem);
+}
+
+window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('orderedList');
+});

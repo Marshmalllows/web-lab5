@@ -13,8 +13,10 @@
             <h1>Мистецтво чаю</h1>
         </div>
         <h2>Що таке чай?</h2>
+        <ol class="ordered-list" id="list1"></ol>
     </div>
     <div class="item left-sidebar">
+        <ol class="ordered-list" id="list2"></ol>
         <h3>Цікаві факти про чай:</h3>
         <ol>
             <li>
@@ -38,6 +40,7 @@
     <div class="item sub-header">
         <button onclick="subheaderSidebarFooterSwapContent()">Action1</button> |
         <button onclick="parallelogramArea()">Action2</button>
+        <ol class="ordered-list" id="list3"></ol>
     </div>
     <div class="item text">
         <form id="Form-Number">
@@ -59,6 +62,25 @@
                 <input type="radio" name="options" value=contents>
                 Контент сторінки
             </label><br>
+        </form>
+        <br>
+        <label for="SelectItem">
+            Оберіть елемент сторінки для додавання елементу списку:
+        </label>
+        <select id="SelectItem">
+            <option value="">Оберіть елемент</option>
+            <option value="1">Заголовок</option>
+            <option value="2">Ліве бічне меню</option>
+            <option value="3">Підзаголовок</option>
+            <option value="4">Праве бічне меню</option>
+            <option value="5">Контент сторінки</option>
+            <option value="6">Дно правої бічної панелі</option>
+            <option value="7">Дно сторінки</option>
+        </select>
+        <form id="TextForm">
+            <label for="textInput">Введіть текст елемента списку:</label>
+            <input type="text" id="textInput" name="textInput" required><br>
+            <input type="submit" value="Додати елемент"><br><br>
         </form>
         <p>
             <strong>Чай — це не просто напій, це ціла культура</strong>, що існує протягом тисячоліть і об'єднує людей по всьому світу.
@@ -103,9 +125,11 @@
         </p>
         <h4>Ось цікава мапа чаїв:</h4>
         <img src="teas.jpg" alt="Мапа чаю">
+        <ol class="ordered-list" id="list5"></ol>
     </div>
     <div class="right-sidebar">
         <div class="item sidebar">
+            <ol class="ordered-list" id="list4"></ol>
             <h3>Ще статті про чай:</h3>
             <ul>
                 <li>
@@ -149,12 +173,14 @@
         <div class="item sidebar-footer">
             Зробити замовлення:
             <br><i>+380998271015</i>
+            <ol class="ordered-list" id="list6"></ol>
         </div>
     </div>
     <div class="item footer">
         <a href="https://github.com/Marshmalllows">Про автора</a>
         <div id="y">
             <h3>Спокій - у всьому</h3>
+            <ol class="ordered-list" id="list7"></ol>
         </div>
     </div>
 </div>
